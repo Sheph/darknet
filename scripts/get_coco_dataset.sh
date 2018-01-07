@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # Clone COCO API
-git clone https://github.com/pdollar/coco
+#git clone https://github.com/pdollar/coco
 cd coco
 
-mkdir images
+#mkdir images
 cd images
 
 # Download Images
-wget -c https://pjreddie.com/media/files/train2014.zip
-wget -c https://pjreddie.com/media/files/val2014.zip
+#wget -c https://pjreddie.com/media/files/train2014.zip
+#wget -c https://pjreddie.com/media/files/val2014.zip
 
 # Unzip
 unzip -q train2014.zip
