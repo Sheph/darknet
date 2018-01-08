@@ -68,9 +68,9 @@ static void *detect_in_thread(void *ptr)
     int fdet = 1;
 
     if (first)
-        fprintf(json_file, "\"%d\" : [\n", cur_frame);
+        fprintf(json_file, "[%d, [\n", cur_frame);
     else
-        fprintf(json_file, ",\n\"%d\" : [\n", cur_frame);
+        fprintf(json_file, ",\n[%d, [\n", cur_frame);
 
     for (i = 0; i < demo_detections; ++i) {
         char labelstr[4096] = {0};
@@ -107,7 +107,7 @@ static void *detect_in_thread(void *ptr)
         }
     }
 
-    fprintf(json_file, "]");
+    fprintf(json_file, "]]");
 
     first = 0;
     running = 0;
@@ -160,7 +160,7 @@ void anomaly(char *cfgfile, char *weightfile, float thresh, int cam_index, const
 
     json_file = fopen("boxes.json", "wb");
 
-    fprintf(json_file, "{\n");
+    fprintf(json_file, "[\n");
 
     srand(2222222);
 
@@ -239,6 +239,6 @@ void anomaly(char *cfgfile, char *weightfile, float thresh, int cam_index, const
 
     printf("Done!\n");
 
-    fprintf(json_file, "}\n");
+    fprintf(json_file, "]\n");
     fclose(json_file);
 }
