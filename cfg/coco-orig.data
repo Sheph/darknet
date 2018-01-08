@@ -1,0 +1,3 @@
+classes= 80
+names = data/coco-orig.names
+eval=coco
