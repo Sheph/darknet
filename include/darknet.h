@@ -246,7 +246,7 @@ struct layer{
 
     float * m;
     float * v;
-    
+
     float * bias_m;
     float * bias_v;
     float * scale_m;
@@ -271,7 +271,7 @@ struct layer{
     float *g_cpu;
     float *o_cpu;
     float *c_cpu;
-    float *dc_cpu; 
+    float *dc_cpu;
 
     float * binary_input;
 
@@ -298,7 +298,7 @@ struct layer{
 
     struct layer *input_h_layer;
     struct layer *state_h_layer;
-	
+
     struct layer *wz;
     struct layer *uz;
     struct layer *wr;
@@ -338,7 +338,7 @@ struct layer{
     float *g_gpu;
     float *o_gpu;
     float *c_gpu;
-    float *dc_gpu; 
+    float *dc_gpu;
 
     float *m_gpu;
     float *v_gpu;
@@ -644,6 +644,7 @@ void rgbgr_weights(layer l);
 image *get_weights(layer l);
 
 void demo(char *cfgfile, char *weightfile, float thresh, int cam_index, const char *filename, char **names, int classes, int frame_skip, char *prefix, int avg, float hier_thresh, int w, int h, int fps, int fullscreen);
+void anomaly(char *cfgfile, char *weightfile, float thresh, int cam_index, const char *filename, char **names, int classes, int frame_skip, char *prefix, int avg, float hier_thresh, int w, int h, int fps, int fullscreen);
 void get_detection_boxes(layer l, int w, int h, float thresh, float **probs, box *boxes, int only_objectness);
 
 char *option_find_str(list *l, char *key, char *def);
