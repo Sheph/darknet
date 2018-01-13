@@ -35,7 +35,7 @@ static float *avg;
 static double demo_time;
 
 static FILE* json_file = NULL;
-static float target_fps = 1.0f;
+static float target_fps = 2.0f;
 static int first = 1;
 
 static void *detect_in_thread(void *ptr)
